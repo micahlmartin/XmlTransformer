@@ -9,22 +9,26 @@ For example, suppose you want to add an item to the modules collection of the we
 
 **Transformation File**  
 
-```<configuration>  
-		<system.webServer>  
-			<modules>  
-				<add name="MyNuModule" type="Sample.MyNuModule" />  
-			</modules>  
-		<system.webServer>  
-	</configuration>```
+```
+<configuration>  
+	<system.webServer>  
+		<modules>  
+			<add name="MyNuModule" type="Sample.MyNuModule" />  
+		</modules>  
+	<system.webServer>  
+</configuration>
+```
 
 **Original File**  
-    <configuration>
-        <system.webServer>
-            <modules>
-                <add name="MyModule" type="Sample.MyModule" />
-            </modules>
-        <system.webServer>
-    </configuration>
+```
+<configuration>
+	<system.webServer>
+		<modules>
+			<add name="MyModule" type="Sample.MyModule" />
+		</modules>
+	<system.webServer>
+</configuration>
+```
 
 After the transformation the original file will look like this:  
     <configuration>
