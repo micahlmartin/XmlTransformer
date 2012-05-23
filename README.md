@@ -11,8 +11,8 @@ Merges XML configuration files.
 Don't have [chocolately](http://chocolatey.org)? Install it like this:
 
 ```
-	@powershell -NoProfile -ExecutionPolicy unrestricted -Command 
-         "iex((new-object net.webclient).DownloadString('http://bit.ly/psChocInstall'))"
+c:\> @powershell -NoProfile -ExecutionPolicy unrestricted -Command 
+		"iex((new-object net.webclient).DownloadString('http://bit.ly/psChocInstall'))"
  ```
 
 **NuGet**
