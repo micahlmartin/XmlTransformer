@@ -72,7 +72,6 @@ task InitEnvironment{
 			
 			$script:isEnvironmentInitialized = $true
 		}
-	
 	}
 }
  
@@ -81,9 +80,10 @@ task CompileMain -depends InstallDependentPackages, InitEnvironment, Init {
 	exec { &$script:msBuild $solutionFile /p:OutDir="$buildBase\" }
 	
 	$assemblies = @()
+	$assemblies  +=  dir $buildBase\*.exe
 	$assemblies  +=  dir $buildBase\*.dll -Exclude **Tests.dll
 
-	& $ilMergeTool /lib:$baseDir /t:library /out:"$binariesDir\XmlTransformer.dll" /targetplatform:$script:ilmergeTargetFramework /log:"$buildBase\MergeLog.txt" $assemblies
+	& $ilMergeTool /lib:$baseDir /t:exe /out:"$binariesDir\XmlTransformer.exe" /targetplatform:$script:ilmergeTargetFramework /log:"$buildBase\MergeLog.txt" $assemblies
 	$mergeLogContent = Get-Content "$buildBase\MergeLog.txt"
 	echo "------------------------------Merge Log-----------------------"
 	echo $mergeLogContent
@@ -122,7 +122,7 @@ task CreatePackages -depends PrepareRelease  {
 	
 	$packageName = "XmlTransformer"
 	$packit.package_description = "Transforms xml configuration files"
-	invoke-packit $packageName $script:packageVersion @{log4net="[2.0.0]"} "binaries\XmlTransformer.dll" @{} 
+	invoke-packit $packageName $script:packageVersion @{log4net="[2.0.0]"} "binaries\XmlTransformer.exe" @{} 
 		
 	remove-module packit
  } 
