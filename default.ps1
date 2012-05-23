@@ -122,7 +122,7 @@ task CreatePackages -depends PrepareRelease  {
 	
 	$packageName = "XmlTransformer"
 	$packit.package_description = "Transforms xml configuration files"
-	invoke-packit $packageName $script:packageVersion @{log4net="[2.0.0]"} "binaries\XmlTransformer.exe" @{} 
+	invoke-packit $packageName $script:packageVersion @{} "binaries\XmlTransformer.exe" @{} 
 		
 	remove-module packit
  } 
