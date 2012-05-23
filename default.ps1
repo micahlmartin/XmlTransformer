@@ -19,7 +19,6 @@ $script:msBuild = ""
 $script:isEnvironmentInitialized = $false
 $script:ilmergeTargetFramework = ""
 $script:msBuildTargetFramework = ""	
-$ilMergeKey = "$srcDir\NServiceBus.snk"
 $script:packageVersion = "1.0.0"
 
 include $toolsDir\psake\buildutils.ps1
@@ -120,12 +119,10 @@ task CreatePackages -depends PrepareRelease  {
 	$packit.PackagingArtifactsRoot = "$baseDir\release\PackagingArtifacts"
 	$packit.packageOutPutDir = "$baseDir\release\packages"
 	$packit.targeted_Frameworks = "net40";
-
-	#region Packing NServiceBus
+	
 	$packageName = "XmlTransformer"
 	$packit.package_description = "Transforms xml configuration files"
 	invoke-packit $packageName $script:packageVersion @{log4net="[2.0.0]"} "binaries\XmlTransformer.dll" @{} 
-	#endregion
 		
 	remove-module packit
  } 
