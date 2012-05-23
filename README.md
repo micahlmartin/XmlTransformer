@@ -60,5 +60,5 @@ The `TransformFile` method will actually save the merged document to the origina
 
 Currently the commandline only supports file based transform.
 
-```-s/--sourcePath <source file path>```
-```-t/--transformPath <transform file path>```
+```-s/--sourcePath <source file path>  
+-t/--transformPath <transform file path>```
