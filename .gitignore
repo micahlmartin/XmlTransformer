@@ -1,0 +1,9 @@
+bin
+obj
+*.pdb
+TestResults
+*.nupkg
+Release
+binaries
+build
+packages
