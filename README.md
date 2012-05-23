@@ -8,14 +8,15 @@ The transformation file should contain XML that looks like a web.config or app.c
 For example, suppose you want to add an item to the modules collection of the web.config file.
 
 **Transformation File**  
-    <configuration>
-        <system.webServer>
-            <modules>
-                <add name="MyNuModule" type="Sample.MyNuModule" />
-            </modules>
-        <system.webServer>
-    </configuration>
-
+<pre><code>
+<configuration>
+	<system.webServer>
+		<modules>
+			<add name="MyNuModule" type="Sample.MyNuModule" />
+		</modules>
+	<system.webServer>
+</configuration>
+</code></pre>
 **Original File**  
     <configuration>
         <system.webServer>
