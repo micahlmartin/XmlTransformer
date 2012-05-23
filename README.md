@@ -9,12 +9,12 @@ For example, suppose you want to add an item to the modules collection of the we
 
 **Transformation File**  
 
-```<configuration>
-		<system.webServer>
-			<modules>
-				<add name="MyNuModule" type="Sample.MyNuModule" />
-			</modules>
-		<system.webServer>
+```<configuration>  
+		<system.webServer>  
+			<modules>  
+				<add name="MyNuModule" type="Sample.MyNuModule" />  
+			</modules>  
+		<system.webServer>  
 	</configuration>```
 
 **Original File**  
