@@ -2,6 +2,21 @@
 
 Merges XML configuration files.
 
+## Get it
+
+**Chocolatey**
+
+```cinst xmltransformer```
+
+Don't have [chocolately](http://chocolatey.org)? Instal it like this:
+
+```@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('http://bit.ly/psChocInstall'))"```
+
+**NuGet**
+
+```install-package xmltransformer```
+
+
 ## How it works
 The transformation file should contain XML that looks like a web.config or app.config file, but it includes only the sections that need to be merged into the project's configuration file.
 

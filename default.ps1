@@ -19,7 +19,7 @@ $script:msBuild = ""
 $script:isEnvironmentInitialized = $false
 $script:ilmergeTargetFramework = ""
 $script:msBuildTargetFramework = ""	
-$script:packageVersion = "1.0.0"
+$script:packageVersion = "1.0.1"
 
 include $toolsDir\psake\buildutils.ps1
 
