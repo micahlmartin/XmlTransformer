@@ -8,9 +8,10 @@ Merges XML configuration files.
 
 ```cinst xmltransformer```
 
-Don't have [chocolately](http://chocolatey.org)? Instal it like this:
+Don't have [chocolately](http://chocolatey.org)? Install it like this:
 
-```@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('http://bit.ly/psChocInstall'))"```
+```@powershell -NoProfile -ExecutionPolicy unrestricted -Command 
+         "iex((new-object net.webclient).DownloadString('http://bit.ly/psChocInstall'))"```
 
 **NuGet**
 
