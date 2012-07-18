@@ -71,11 +71,9 @@ Notice that modules section wasn't completely replaced, it just merged the new e
 #### Commandline
 
 ```
-  /s[ourceFile]:<fileName> 		The file that you want to apply the transformation to
-
-  /t[ransformFile]:<fileName> 	The name of the file that contains the transformations
-					
-  /k[ind]:Merge					Use the merge method
+  XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\newConfig.xml /k:Merge
+  
+  XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\mychanges.xml /d:c:\myproject\newConfig.xml /k:Merge
 ```
 
 #### Assembly Reference
