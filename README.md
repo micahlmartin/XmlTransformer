@@ -21,7 +21,7 @@ C:\> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex
 
 ```install-package xmltransformer```
 
-**Command-line args**
+## Command-line args
 
 ```  
 Usage: XmlTransformer /s:[sourceFile] /t:[transformFile] /d:[destinationFile] /k:[ind]
