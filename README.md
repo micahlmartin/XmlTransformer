@@ -68,6 +68,16 @@ Notice that modules section wasn't completely replaced, it just merged the new e
 
 ### Usage
 
+#### Commandline
+
+```
+  /s[ourceFile]:<fileName> 		The file that you want to apply the transformation to
+
+  /t[ransformFile]:<fileName> 	The name of the file that contains the transformations
+					
+  /k[ind]:Merge					Use the merge method
+```
+
 #### Assembly Reference
 
 There are 3 static methods on the `XmlTransformer` class for merging xml files:  
@@ -77,12 +87,3 @@ There are 3 static methods on the `XmlTransformer` class for merging xml files:
 ```static void TransformFile(string sourceFile, string transformPath);```  
 
 The `TransformFile` method will actually save the merged document to the original file, the others simply returned the modified xml object.
-
-#### Commandline
-
-Currently the commandline only supports file based transform.
-
-```
--s/--sourcePath <source file path>
--t/--transformPath <transform file path>
-```
