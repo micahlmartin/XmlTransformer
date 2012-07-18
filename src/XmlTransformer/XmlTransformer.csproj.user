@@ -3,4 +3,7 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>/s:c:\test\source.config /t:c:\test\transform.config /d:c:\test\result.config</StartArguments>
+  </PropertyGroup>
 </Project>

@@ -9,7 +9,7 @@ $baseDir  = resolve-path .
 $releaseRoot = "$baseDir\Release"
 $releaseDir = "$releaseRoot\net40"
 $buildBase = "$baseDir\build"
-$sourceDir = "$baseDir\src"
+$sourceDir = "$baseDir"
 $outDir =  "$buildBase\output"
 $toolsDir = "$baseDir\tools"
 $binariesDir = "$baseDir\binaries"
@@ -19,7 +19,7 @@ $script:msBuild = ""
 $script:isEnvironmentInitialized = $false
 $script:ilmergeTargetFramework = ""
 $script:msBuildTargetFramework = ""	
-$script:packageVersion = "1.0.1"
+$script:packageVersion = "1.1.0"
 
 include $toolsDir\psake\buildutils.ps1
 
@@ -76,7 +76,7 @@ task InitEnvironment{
 }
  
 task CompileMain -depends InstallDependentPackages, InitEnvironment, Init {
- 	$solutionFile = "$sourceDir\XmlTransformer.sln"
+ 	$solutionFile = "XmlTransformer.sln"
 	exec { &$script:msBuild $solutionFile /p:OutDir="$buildBase\" }
 	
 	$assemblies = @()
@@ -121,7 +121,7 @@ task CreatePackages -depends PrepareRelease  {
 	$packit.targeted_Frameworks = "net40";
 	
 	$packageName = "XmlTransformer"
-	$packit.package_description = "Transforms xml configuration files"
+	$packit.package_description = "Merges XML configuration files the way NuGet does it or Transforms them the way Microsofts web.config transformations does it but without the dependency on MSBuild."
 	invoke-packit $packageName $script:packageVersion @{} "binaries\XmlTransformer.exe" @{} 
 		
 	remove-module packit
