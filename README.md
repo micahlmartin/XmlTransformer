@@ -21,6 +21,38 @@ C:\> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex
 
 ```install-package xmltransformer```
 
+## Command-line args
+
+```  
+Usage: XmlTransformer /s:[sourceFile] /t:[transformFile] /d:[destinationFile] /k:[ind]
+
+Description:        Transforms xml files
+
+Params:
+
+  /s[ourceFile]:<fileName>
+
+                    The file that you want to apply the transformation to
+
+
+  /t[ransformFile]:<fileName> 
+
+                    The name of the file that contains the transformations
+
+
+  /d[estinationFile]:<fileName> (optional)
+
+                    The name of the file where the transformations
+                    will be saved to. This will default to the source
+                    file if not specified.
+
+
+  /k[ind]:<Transform,Merge>
+                    The type of transformation to apply. Merge will merge 
+                    the files and transform will transform them using 
+                    the transformation directives.
+```
+					
 ## Transform
 
 ### How it works
