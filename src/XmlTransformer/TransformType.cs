@@ -7,7 +7,7 @@ namespace XmlTransformer
 {
     public enum TransformType
     {
-        Merge,
-        Transform
+        Merge = 0,
+        Transform = 1
     }
 }

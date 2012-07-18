@@ -42,6 +42,11 @@ namespace XmlTransformer
             return MergeXml(source, transform).ToXmlElement();
         }
 
+        public static void TransformXml(string sourceFile, string transformFile)
+        {
+            TransformXml(sourceFile, transformFile, transformFile);
+        }
+
         public static void TransformXml(string sourceFile, string transformFile, string destinationFile)
         {
             var transformer = new TransformXml

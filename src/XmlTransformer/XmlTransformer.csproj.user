@@ -4,6 +4,6 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>-s C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config\machine.config -t c:\code\BoomTown\tools\Deployments\QA\machine.config -d c:\test\test.config -k Transform</StartArguments>
+    <StartArguments>/s:c:\test\source.config /t:c:\test\transform.config /d:c:\test\result.config</StartArguments>
   </PropertyGroup>
 </Project>

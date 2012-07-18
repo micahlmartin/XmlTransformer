@@ -56,6 +56,30 @@ The Locator and Transform elements themselves are not reproduced in the transfor
 
 You can find a full list of features and syntax at http://msdn.microsoft.com/en-us/library/dd465326.aspx
 
+### Usage
+
+#### Commandline
+
+This will transform the source file and overwrite it:
+
+```
+  XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\newConfig.xml /k:Transform
+```  
+
+This will create a new file containing the transformed document:
+
+```  
+  XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\mychanges.xml /d:c:\myproject\newConfig.xml /k:Transform
+```
+
+#### Assembly Reference
+
+There are 2 static methods on the `XmlTransformer` class for transforming xml files:  
+
+```public static void TransformXml(string sourceFile, string transformFile);```  
+```public static void TransformXml(string sourceFile, string transformFile, string destinationFile);```
+
+
 ## Merge
 
 ### How it works
@@ -130,4 +154,4 @@ The `TransformFile` method will actually save the merged document to the origina
 **Disclaimer**
 
 All credit is given to the guys at NuGet who wrote the merge utility and Microsoft who wrote the transformation utility. 
-I have simply just made them available and easier to access with a command-line utility.
+I have simply just made them available and easier to access with a command-line utility.	
