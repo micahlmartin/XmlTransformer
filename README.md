@@ -125,3 +125,9 @@ There are 3 static methods on the `XmlTransformer` class for merging xml files:
 ```static void TransformFile(string sourceFile, string transformPath);```  
 
 The `TransformFile` method will actually save the merged document to the original file, the others simply returned the modified xml object.
+
+
+**Disclaimer**
+
+All credit is given to the guys at NuGet who wrote the merge utility and Microsoft who wrote the transformation utility. 
+I have simply just made them available and easier to access with a command-line utility.
