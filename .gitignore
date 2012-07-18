@@ -8,3 +8,4 @@ binaries
 build
 packages
 _Resharper*
+*.suo
