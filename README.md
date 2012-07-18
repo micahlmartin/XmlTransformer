@@ -21,6 +21,35 @@ C:\> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex
 
 ```install-package xmltransformer```
 
+## Transform
+
+### How it works
+
+See [here](http://msdn.microsoft.com/en-us/library/dd465326.aspx) for a more detailed explaination.
+
+A transform file is an XML file that specifies how the another XML file should be changed. 
+Transformation actions are specified by using XML attributes that are defined in the XML-Document-Transform namespace, which is mapped to the xdt prefix. 
+The XML-Document-Transform namespace defines two attributes: Locator and Transform. The Locator attribute specifies the element or set of elements that you want to change in some way. 
+The Transform attribute specifies what you want to do to the elements that the Locator attribute finds.
+
+The following example shows the contents of a transform file that changes a connection string and replaces the customErrors element:
+
+```  
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <connectionStrings>
+    <add name="MyDB" 
+      connectionString="value for the deployed Web.config file" 
+      xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+  </connectionStrings>
+  <system.web>
+    <customErrors defaultRedirect="GenericError.htm"
+      mode="RemoteOnly" xdt:Transform="Replace">
+      <error statusCode="500" redirect="InternalError.htm"/>
+    </customErrors>
+  </system.web>
+</configuration>
+```  
 
 ## Merge
 
@@ -70,13 +99,13 @@ Notice that modules section wasn't completely replaced, it just merged the new e
 
 #### Commandline
 
-This will merge the two files and overwrite the c:\myproject\config.xml file
+This will merge the two files and overwrite the c:\myproject\config.xml file:
 
 ```
   XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\newConfig.xml /k:Merge
 ```  
 
-This will create a new file containing the merged document
+This will create a new file containing the merged document:
 
 ```  
   XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\mychanges.xml /d:c:\myproject\newConfig.xml /k:Merge
