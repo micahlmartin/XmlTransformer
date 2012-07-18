@@ -51,6 +51,11 @@ The following example shows the contents of a transform file that changes a conn
 </configuration>
 ```  
 
+The root element of a transform file must specify the XML-Document-Transform namespace in its opening tag, as shown in the preceding example. 
+The Locator and Transform elements themselves are not reproduced in the transformed file.
+
+You can find a full list of features and syntax at http://msdn.microsoft.com/en-us/library/dd465326.aspx
+
 ## Merge
 
 ### How it works
