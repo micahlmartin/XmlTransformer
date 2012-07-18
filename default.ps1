@@ -121,7 +121,7 @@ task CreatePackages -depends PrepareRelease  {
 	$packit.targeted_Frameworks = "net40";
 	
 	$packageName = "XmlTransformer"
-	$packit.package_description = "Transforms xml configuration files"
+	$packit.package_description = "Merges XML configuration files the way NuGet does it or Transforms them the way Microsofts web.config transformations does it but without the dependency on MSBuild."
 	invoke-packit $packageName $script:packageVersion @{} "binaries\XmlTransformer.exe" @{} 
 		
 	remove-module packit
