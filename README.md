@@ -22,7 +22,7 @@ C:\> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex
 ```install-package xmltransformer```
 
 
-#Merge
+## Merge
 
 ### How it works
 The transformation file should contain XML that looks like a web.config or app.config file, but it includes only the sections that need to be merged into the project's configuration file.
