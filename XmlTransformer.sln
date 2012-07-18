@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlTransformer", "XmlTransformer\XmlTransformer.csproj", "{E4611C19-9B81-4BD6-9797-EC594F0711A6}"
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlTransformer", "src\XmlTransformer\XmlTransformer.csproj", "{E4611C19-9B81-4BD6-9797-EC594F0711A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

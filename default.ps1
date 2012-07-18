@@ -9,7 +9,7 @@ $baseDir  = resolve-path .
 $releaseRoot = "$baseDir\Release"
 $releaseDir = "$releaseRoot\net40"
 $buildBase = "$baseDir\build"
-$sourceDir = "$baseDir\src"
+$sourceDir = "$baseDir"
 $outDir =  "$buildBase\output"
 $toolsDir = "$baseDir\tools"
 $binariesDir = "$baseDir\binaries"
@@ -76,7 +76,7 @@ task InitEnvironment{
 }
  
 task CompileMain -depends InstallDependentPackages, InitEnvironment, Init {
- 	$solutionFile = "$sourceDir\XmlTransformer.sln"
+ 	$solutionFile = "XmlTransformer.sln"
 	exec { &$script:msBuild $solutionFile /p:OutDir="$buildBase\" }
 	
 	$assemblies = @()
