@@ -70,9 +70,15 @@ Notice that modules section wasn't completely replaced, it just merged the new e
 
 #### Commandline
 
+This will merge the two files and overwrite the c:\myproject\config.xml file
+
 ```
   XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\newConfig.xml /k:Merge
-  
+```  
+
+This will create a new file containing the merged document
+
+```  
   XmlTransformer.exe /s:c:\myproject\config.xml /t:c:\myproject\mychanges.xml /d:c:\myproject\newConfig.xml /k:Merge
 ```
 
