@@ -1,7 +1,7 @@
 # XmlTransformer
 
 Merges XML configuration files the way [NuGet does it](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations) 
-or Transforms them the way Microsofts [web.config transformations does it](http://msdn.microsoft.com/en-us/library/dd465326.aspx).
+or Transforms them the way Microsofts [web.config transformations does it](http://msdn.microsoft.com/en-us/library/dd465326.aspx) but without the dependency on MSBuild.
 
 ## Get it
 
