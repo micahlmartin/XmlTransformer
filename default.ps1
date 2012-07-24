@@ -19,7 +19,7 @@ $script:msBuild = ""
 $script:isEnvironmentInitialized = $false
 $script:ilmergeTargetFramework = ""
 $script:msBuildTargetFramework = ""	
-$script:packageVersion = "1.1.0.2"
+$script:packageVersion = "1.1.0.4"
 
 include $toolsDir\psake\buildutils.ps1
 
@@ -31,6 +31,15 @@ task Clean {
 
 task Init -depends Clean {
 	create-directory $binariesDir
+}
+
+task DetectOperatingSystemArchitecture {
+	$isWow64 = ((Get-WmiObject -class "Win32_Processor" -property "AddressWidth").AddressWidth -eq 64)
+	if ($isWow64 -eq $true)
+	{
+		$script:architecture = "x64"
+	}
+    echo "Machine Architecture is $script:architecture"
 }
 
 task InstallDependentPackages {
@@ -52,7 +61,7 @@ task InstallDependentPackages {
 	}
  }
  
-task InitEnvironment{
+task InitEnvironment -depends DetectOperatingSystemArchitecture {
 
 	if($script:isEnvironmentInitialized -ne $true){
 		if ($TargetFramework -eq "net-4.0"){
@@ -64,7 +73,13 @@ task InitEnvironment{
 			
 			echo ".Net 4.0 build requested - $script:msBuild" 
 
-			$script:ilmergeTargetFramework  = "v4," + $netfxCurrent
+			$programFilesPath = (gc env:ProgramFiles)
+			if($script:architecture -eq "x64") {
+				$programFilesPath = (gc env:"ProgramFiles(x86)")
+			}
+			
+			$frameworkPath = Join-Path $programFilesPath "Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0"
+			$script:ilmergeTargetFramework  =  "v4,$frameworkPath"
 			
 			$script:msBuildTargetFramework ="/p:TargetFrameworkVersion=v4.0 /ToolsVersion:4.0"
 			
