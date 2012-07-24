@@ -4,6 +4,6 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>/s:c:\test\source.config /t:c:\test\transform.config /d:c:\test\result.config</StartArguments>
+    <StartArguments>/s:d:\temp\deploy\Packages\distributed_messaging\Content\Configuration\MessageService.xml /t:C:\code\BoomTown\tools\deployments\QA\distributed_messaging\Content\Configuration\MessageService.xml.transform /d:d:\temp\deploy\Deployments\QA\distributed_messaging\Content\Configuration\MessageService.xml /k:Transform</StartArguments>
   </PropertyGroup>
 </Project>

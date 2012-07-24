@@ -374,7 +374,7 @@ namespace XmlTransformer
                 {
                     case '\n':
                     case '\r':
-                        goto case '\n';
+                        continue;
                     default:
                         return indent.Substring(index + 1);
                 }
