@@ -6,7 +6,11 @@ $script:packit.default_package = "XmlTransformer"
 $script:packit.package_owners = "Micah Martin"
 $script:packit.package_authors = "Micah Martin"
 $script:packit.package_description = ""
-$script:packit.release_notes = "Added web.config transformation support"
+$script:packit.release_notes = 
+"
+Added web.config transformation support
+Fixed bug in output formatting causing infinite loop
+"
 $script:packit.package_language = "en-US"
 $script:packit.package_licenseUrl = "https://github.com/micahlmartin/XmlTransformer"
 $script:packit.package_projectUrl = "https://github.com/micahlmartin/XmlTransformer"
