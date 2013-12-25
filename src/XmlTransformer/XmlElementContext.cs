@@ -230,7 +230,7 @@ namespace XmlTransformer
                     else if (xmlAttribute.Prefix.Equals("xmlns") || xmlAttribute.Name.Equals("xmlns"))
                         list.Add(xmlAttribute);
                     else
-                        xmlAttribute.Prefix = (string)null;
+                        xmlAttribute.Prefix = string.Empty;
                 }
                 foreach (XmlAttribute node1 in list)
                     node.Attributes.Remove(node1);
